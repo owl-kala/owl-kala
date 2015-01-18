@@ -1,0 +1,10 @@
+The Kala software currently consists of two packages:
+
+- kala-time is the API to the library. It contains the interfaces that the user is generally expected to use.
+- kala-time-impl is the current Kala implementation. It consists of the implementation classes that make up the reference implementation. These classes are generally recognizable by having a name ending in -Impl, and they are not meant to be used directly. Use the interfaces from kala-time, instead.
+
+The only reason, currently, for using any -Impl class is to construct a new TemporalOntologyManager(Impl), and new serializers and parsers. This is a temporary situation: the TemporalOntologyManager will likely be built through a static factory method in a later apibinding package, and serializers and parsers will likely be built through the available representation schemes.
+
+The sources for kala-time and kala-time-impl can be found in kala-time/src/ and kala-time-impl/src/, respectively.
+
+Kala depends on three external libraries: the OWL API for interfacing with OWL ontologies and as the basis for the Kala API; Google Guava for advanced collection support; and Joda Time for date/time classes that are superior to those in the JDK.
